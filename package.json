@@ -1,8 +1,12 @@
 {
   "name": "eslint-plugin-no-function-declare-after-return",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "An ESLint plugin to prevent using function declaration after return statement",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "/lib"
+  ],
   "devDependencies": {
     "eslint": ">=0.8.0",
     "prettier": "^2.1.1"
@@ -13,7 +17,8 @@
   "scripts": {
     "test": "node tests/index",
     "preversion": "npm run test",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run test",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",

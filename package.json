@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-no-function-declare-after-return",
   "version": "0.0.1",
-  "description": "An ESLint plugin to prevent using function declaration after return statement",
+  "description": "An ESLint plugin to prevent function declaration after return statement",
   "main": "index.js",
   "files": [
     "index.js",

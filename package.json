@@ -38,5 +38,6 @@
     "declaration",
     "after",
     "return"
-  ]
+  ],
+  "dependencies": {}
 }

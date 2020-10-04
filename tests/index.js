@@ -34,6 +34,7 @@ ruleTester.run("no-function-declare-after-return", rule, {
     },
   ],
   invalid: [
+    // Generic case
     {
       code: `function test() {
         return {
@@ -47,6 +48,28 @@ ruleTester.run("no-function-declare-after-return", rule, {
         {
           message:
             "Function declaration should be moved before return statement (on Line: 2)",
+        },
+      ],
+    },
+    // Test for multiple nested errors
+    {
+      code: `function demo(){
+        return nested;
+        function nested(){
+          return nested2;
+          function nested2(){
+            console.log("hello")
+          }
+        }
+      }`,
+      errors: [
+        {
+          message:
+            "Function declaration should be moved before return statement (on Line: 2)",
+        },
+        {
+          message:
+            "Function declaration should be moved before return statement (on Line: 4)",
         },
       ],
     },

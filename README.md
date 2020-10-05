@@ -62,7 +62,7 @@ This plugin will enforce that there are no function declarations are the return 
 
 ## Future features
 
-- [ ] Way to auto-fix the errors
+- [x] Way to auto-fix the errors
 - [ ] Way to configure the error messages
 
 ## Build with ♡ by

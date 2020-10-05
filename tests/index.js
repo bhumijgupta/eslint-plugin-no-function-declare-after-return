@@ -44,6 +44,15 @@ ruleTester.run("no-function-declare-after-return", rule, {
           return "Hello";
         }
       }`,
+      output: `function test() {
+        function sayHello() {
+          return "Hello";
+        };
+return {
+          helloFunc: sayHello,
+        };
+        
+      }`,
       errors: [
         {
           message:
@@ -61,6 +70,17 @@ ruleTester.run("no-function-declare-after-return", rule, {
             console.log("hello")
           }
         }
+      }`,
+      // Seems like ESlint doesn't want to do closures in a single round of fixing
+      output: `function demo(){
+        function nested(){
+          return nested2;
+          function nested2(){
+            console.log("hello")
+          }
+        };
+return nested;
+        
       }`,
       errors: [
         {
